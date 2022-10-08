@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Archer.Controller">
+   <children>
+      <ImageView fx:id="bg" fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" />
+      <ImageView fx:id="pixelBow" fitHeight="217.0" fitWidth="168.0" layoutX="-81.0" layoutY="-107.0" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" />
+      <Rectangle fx:id="upperRectangle" arcHeight="5.0" arcWidth="5.0" fill="#cad9e8" height="86.0" layoutX="23.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="710.0" />
+      <Rectangle fx:id="lowerRectangle" arcHeight="5.0" arcWidth="5.0" fill="#cad9e8" height="94.0" layoutX="32.0" layoutY="429.0" stroke="BLACK" strokeType="INSIDE" width="887.0" />
+      <Slider fx:id="weightSlider" blockIncrement="0.0" layoutX="40.0" layoutY="467.0" onMouseDragged="#weightReleased" onMouseReleased="#weightReleased" prefHeight="50.0" prefWidth="250.0" />
+      <Slider fx:id="constantSlider" blockIncrement="0.0" layoutX="339.0" layoutY="467.0" max="0.0" onMouseDragged="#constantReleased" onMouseReleased="#constantReleased" prefHeight="50.0" prefWidth="250.0" />
+      <Slider fx:id="displacementSlider" blockIncrement="0.0" layoutX="638.0" layoutY="467.0" onMouseDragged="#displacementReleased" onMouseReleased="#displacementReleased" prefHeight="50.0" prefWidth="250.0" />
+      <TextField fx:id="tensionValue1" editable="false" layoutX="40.0" layoutY="14.0" prefHeight="30.0" prefWidth="125.0" style="-fx-border-fill: transparent; -fx-background-color: transparent;" text="Initial Velocity">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="initialVel" editable="false" layoutX="34.0" layoutY="45.0" prefHeight="30.0" prefWidth="125.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField editable="false" layoutX="188.0" layoutY="14.0" prefHeight="24.0" prefWidth="112.0" style="-fx-border-fill: transparent; -fx-background-color: transparent;" text="Final Velocity">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="finalVel" editable="false" layoutX="181.0" layoutY="46.0" prefHeight="30.0" prefWidth="125.0" />
+      <TextField fx:id="tensionValue2" editable="false" layoutX="339.0" layoutY="14.0" prefHeight="30.0" prefWidth="125.0" style="-fx-border-fill: transparent; -fx-background-color: transparent;" text="Error Distance X">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="distanceErrorX" editable="false" layoutX="339.0" layoutY="46.0" prefHeight="30.0" prefWidth="125.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tensionValue21" editable="false" layoutX="496.0" layoutY="14.0" prefHeight="30.0" prefWidth="125.0" style="-fx-border-fill: transparent; -fx-background-color: transparent;" text="Error Distance Y">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="distanceErrorY" editable="false" layoutX="496.0" layoutY="46.0" prefHeight="30.0" prefWidth="125.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="weightValue" editable="false" layoutX="225.0" layoutY="439.0" prefHeight="37.0" prefWidth="54.0">
+         <opaqueInsets>
+            <Insets bottom="10.0" />
+         </opaqueInsets>
+      </TextField>
+      <TextField fx:id="constantValue" editable="false" layoutX="531.0" layoutY="438.0" prefHeight="37.0" prefWidth="54.0">
+         <opaqueInsets>
+            <Insets bottom="10.0" />
+         </opaqueInsets>
+      </TextField>
+      <Label layoutX="63.0" layoutY="443.0" prefHeight="30.0" prefWidth="148.0" text="Choose weight:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="351.0" layoutY="442.0" prefHeight="30.0" prefWidth="162.0" text="Choose constant:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="goButton" layoutX="837.0" layoutY="35.0" mnemonicParsing="false" onAction="#onClickGo" prefHeight="25.0" prefWidth="78.0" text="Go!" />
+      <TextField fx:id="displacementValue" editable="false" layoutX="840.0" layoutY="438.0" prefHeight="37.0" prefWidth="54.0">
+         <opaqueInsets>
+            <Insets bottom="10.0" />
+         </opaqueInsets>
+      </TextField>
+      <Label layoutX="641.0" layoutY="439.0" prefHeight="30.0" prefWidth="182.0" text="Choose displacement:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="target" fitHeight="150.0" fitWidth="144.0" layoutX="-77.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="pixelArrow" fitHeight="94.0" fitWidth="101.0" layoutX="-47.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="651.0" layoutY="19.0" prefHeight="21.0" prefWidth="66.0" text="Points">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pointsText" editable="false" layoutX="638.0" layoutY="45.0" prefHeight="31.0" prefWidth="66.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="angleValue" editable="false" layoutX="188.0" layoutY="270.0" prefHeight="29.0" prefWidth="78.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Rectangle fx:id="test" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" layoutX="-5.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="test1" arcHeight="5.0" arcWidth="5.0" fill="#ff1f28" height="15.0" layoutX="-5.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="test2" arcHeight="5.0" arcWidth="5.0" fill="#1fffdd" height="15.0" layoutX="-6.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="test3" arcHeight="5.0" arcWidth="5.0" fill="#1fff5a" height="15.0" layoutX="-9.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="test4" arcHeight="5.0" arcWidth="5.0" fill="#dfff21" height="15.0" layoutX="-9.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="test5" arcHeight="5.0" arcWidth="5.0" fill="#ff21c9" height="15.0" layoutX="-5.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <Rectangle fx:id="test6" arcHeight="5.0" arcWidth="5.0" fill="#a621ff" height="15.0" layoutX="-5.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+      <ImageView fx:id="attempts" fitHeight="133.0" fitWidth="134.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
